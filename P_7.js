@@ -1,0 +1,22 @@
+// Active Navbar
+let nav = document.querySelector(".navigation-wrap");
+window.onscroll = function () {
+    if (document.documentElement.scrollTop > 20) {
+        nav.classList.add("scroll-on");
+    }
+    else {
+        nav.classList.remove("scroll-on");
+    }
+}
+
+//  Nav hide
+let navBar = document.querySelectorAll('.nav-link');
+let navCollapse = document.querySelector('.navbar-collapse.collapse');
+navBar.forEach(function (a) {
+    a.addEventListener("click", function (event) {
+        if (event.target.classList.contains("dropdown-toggle")) {
+            return; // Prevent hiding the menu for dropdown toggle clicks
+        }
+        navCollapse.classList.remove("show");
+    })
+})
